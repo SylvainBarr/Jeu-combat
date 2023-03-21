@@ -1,0 +1,16 @@
+#affichage{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+#affichage div{
+    width: 20%;
+    background-color: aqua;
+}
+
+.textZone{
+    display: inline-block;
+    margin: 10px auto;
+}
