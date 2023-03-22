@@ -30,6 +30,7 @@ function creation() {
     let nom = ['Caligula', 'Cicero', 'Crispinus', 'Luxurios', 'Romanus', 'Crassus', 'Platus', 'Maximus', 'Leonidas'];
     let prenoms = prenom.length;
     let noms = nom.length;
+    let gladiators = ["img/gladiator1.webp", "img/gladiator2.webp", "img/gladiator3.webp", "img/gladiator4.webp", "img/gladiator5.webp", "img/gladiator6.webp", "img/gladiator7.webp", "img/gladiator8.webp", "img/gladiator9.webp", "img/gladiator10.webp", "img/gladiator11.webp", "img/gladiator12.webp"];
 
     document.getElementById('textZone').innerHTML = 'Avé César ! Ceux qui vont mourir te saluent ! ';
     console.log("\nAvé César ! Ceux qui vont mourir te saluent !\n");
@@ -40,12 +41,12 @@ function creation() {
         combattants[i] = combattant;
         bouton = "fighter" + (i + 1);
         let combattantActuel = document.querySelector("."+bouton);
-        let gladiators = ["img\gladiator1.webp", "img/gladiator2.webp", "img/gladiator3.webp", "img/gladiator4.webp", "img/gladiator5.webp", "img/gladiator6.webp", "img/gladiator7.webp", "img/gladiator8.webp", "img/gladiator9.webp", "img/gladiator10.webp", "img/gladiator11.webp", "img/gladiator12.webp"];
-        let imgNumber = (getRandomInt(11)+1)
+        
+        let imgNumber = (getRandomInt(gladiators.length))
         combattantActuel.innerHTML+=`<div><img src=${gladiators[imgNumber]}></div><table><thead>
             <tr><th colspan="2">${combattants[i].name}</th></tr>
         </thead><tr><td>Force</td><td>${combattants[i].force}</td></tr><tr><td>Intelligence</td><td>${combattants[i].intell}</td></tr><tr><td>Defense</td><td>${combattants[i].def}</td></tr><tr><td>Vitesse</td><td>${combattants[i].speed}</td></tr>`;
-
+        let deletedImg = gladiators.splice(imgNumber, 1);
         document.getElementById(bouton).value = combattant.name;
         boutonOppo = "oppo" + (i + 1);
         document.getElementById(boutonOppo).value = combattant.name;

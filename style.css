@@ -3,6 +3,22 @@ body{
     padding-top: 20px;
     background-color: rgb(42, 42, 42);
     color: rgb(230, 230, 230);
+    background-image: url('img/background-arena.jpg');
+    background-repeat: no-repeat;
+    background-position: center -500px;
+    background-size: cover;
+}
+
+input[type="button"]{
+    padding:  10px 20px;
+    background-color: rgb(233, 195, 150);
+    border-radius: 5px;
+    border: 2px solid black;
+    font-weight: 600;
+}
+input[type="button"]:hover{
+    background-color: rgb(250, 210, 162);
+    transform:scale(1.1) ;
 }
 
 main{
