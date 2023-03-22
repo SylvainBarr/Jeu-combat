@@ -9,32 +9,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input onclick="creation()" type="button" value="Générer des combattants" id="start">
-    <p id="textZone"></p>
-    <div id="affichage">
-        <div ><p class="fighter1"></p></div>
-        <div ><p class="fighter2"></p></div>
-        <div ><p class="fighter3"></p></div>
-        <div ><p class="fighter4"></p></div>
-    </div>
-
-    <div id="fighters" style="display: none">
-        <h2>Choisissez votre combattant</h2>
-        <input onclick=choixPerso(0) type="button" id="fighter1" value="" style="" class="boutons">
-        <input onclick=choixPerso(1) type="button" id="fighter2" value="" style="" class="boutons">
-        <input onclick=choixPerso(2) type="button" id="fighter3" value="" style="" class="boutons">
-        <input onclick=choixPerso(3) type="button" id="fighter4" value="" style="" class="boutons">
-    </div>
-    <div id="opponents" style="display: none">
-        <h2>Choisissez votre adversaire</h2>
-        <input onclick=choixOpponent(0) type="button" id="oppo1" value="" style="" class="boutons">
-        <input onclick=choixOpponent(1) type="button" id="oppo2" value="" style="" class="boutons">
-        <input onclick=choixOpponent(2) type="button" id="oppo3" value="" style="" class="boutons">
-        <input onclick=choixOpponent(3) type="button" id="oppo4" value="" style="" class="boutons">
-    </div>
-    <div id="combat" style="display: none;">
-        <input onclick="fight()" type="button" value="Combattre">
-    </div>
+    <main>
+        <input onclick="creation()" type="button" value="Générer des combattants" id="start">
+        <h1 id="textZone"></h1>
+        <div id="affichage">
+            <div ><p class="fighter1"></p></div>
+            <div ><p class="fighter2"></p></div>
+            <div ><p class="fighter3"></p></div>
+            <div ><p class="fighter4"></p></div>
+        </div>
+        
+        <div id="fighters" style="display: none">
+            <h2>Choisissez votre combattant</h2>
+            <div>
+                <input onclick=choixPerso(0) type="button" id="fighter1" value="" style="" class="boutons">
+                <input onclick=choixPerso(1) type="button" id="fighter2" value="" style="" class="boutons">
+                <input onclick=choixPerso(2) type="button" id="fighter3" value="" style="" class="boutons">
+                <input onclick=choixPerso(3) type="button" id="fighter4" value="" style="" class="boutons">
+            </div>
+        </div>
+        <div id="opponents" style="display: none">
+            <h2>Choisissez votre adversaire</h2>
+            <div>
+                <input onclick=choixOpponent(0) type="button" id="oppo1" value="" style="" class="boutons">
+                <input onclick=choixOpponent(1) type="button" id="oppo2" value="" style="" class="boutons">
+                <input onclick=choixOpponent(2) type="button" id="oppo3" value="" style="" class="boutons">
+                <input onclick=choixOpponent(3) type="button" id="oppo4" value="" style="" class="boutons">
+            </div>
+        </div>
+        <div id="combat" style="display: none;">
+            <input onclick="fight()" type="button" value="Combattre">
+        </div>
+    </main>
     
 </body>
 </html>

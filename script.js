@@ -23,22 +23,29 @@ function creation() {
     }
     let boutonOppo = "";
     let bouton = "";
+    let affichage = document.querySelector('#affichage');
+    affichage.style.display = "flex"
     
-    let prenom = ['Caïus', 'Spartacus', 'Achilles', 'Crixus', 'Marcus', 'Julius', 'Gaius'];
-    let nom = ['Caligula', 'Cicero', 'Crispinus', 'Luxurios', 'Romanus', 'Crassus', 'Platus', 'Maximus'];
+    let prenom = ['Caïus', 'Spartacus', 'Achilles', 'Crixus', 'Marcus', 'Julius', 'Gaius', 'Brutus', 'Semus'];
+    let nom = ['Caligula', 'Cicero', 'Crispinus', 'Luxurios', 'Romanus', 'Crassus', 'Platus', 'Maximus', 'Leonidas'];
+    let prenoms = prenom.length;
+    let noms = nom.length;
 
     document.getElementById('textZone').innerHTML = 'Avé César ! Ceux qui vont mourir te saluent ! ';
     console.log("\nAvé César ! Ceux qui vont mourir te saluent !\n");
     document.getElementById('fighters').style.display = 'block';
 
     for (let i = 0; i < 4; i++) {
-        let combattant = new Combattant((prenom[getRandomInt(6)] + " " + nom[getRandomInt(8)]));
+        let combattant = new Combattant((prenom[getRandomInt(prenoms)] + " " + nom[getRandomInt(noms)]));
         combattants[i] = combattant;
         bouton = "fighter" + (i + 1);
-        let fighterstats = Object.keys(combattant).map(function(cle){
-            return [Number(cle), combattant[cle]]
-        });
-        document.getElementsByClassName(bouton).innerHTML=fighterstats;
+        let combattantActuel = document.querySelector("."+bouton);
+        let gladiators = ["img\gladiator1.webp", "img/gladiator2.webp", "img/gladiator3.webp", "img/gladiator4.webp", "img/gladiator5.webp", "img/gladiator6.webp", "img/gladiator7.webp", "img/gladiator8.webp", "img/gladiator9.webp", "img/gladiator10.webp", "img/gladiator11.webp", "img/gladiator12.webp"];
+        let imgNumber = (getRandomInt(11)+1)
+        combattantActuel.innerHTML+=`<div><img src=${gladiators[imgNumber]}></div><table><thead>
+            <tr><th colspan="2">${combattants[i].name}</th></tr>
+        </thead><tr><td>Force</td><td>${combattants[i].force}</td></tr><tr><td>Intelligence</td><td>${combattants[i].intell}</td></tr><tr><td>Defense</td><td>${combattants[i].def}</td></tr><tr><td>Vitesse</td><td>${combattants[i].speed}</td></tr>`;
+
         document.getElementById(bouton).value = combattant.name;
         boutonOppo = "oppo" + (i + 1);
         document.getElementById(boutonOppo).value = combattant.name;
@@ -185,8 +192,12 @@ function getRandomInt(max) {
 }
 
 
-// fontion du choix de perso
 
+/**
+ * fontion du choix de perso
+ * 
+ * @param {*} caracNumber = nombre qui sera renseigné selon le bouton cliqué
+ */
 function choixPerso(caracNumber) {
 
     perso = parseInt(caracNumber);
@@ -194,10 +205,15 @@ function choixPerso(caracNumber) {
     document.getElementById('fighters').style.display = 'none';
     document.getElementById('opponents').style.display = 'block';
     document.getElementById('oppo'+(perso+1)).style.display = 'none';
+    document.querySelector(".fighter"+(perso+1)).parentNode.style.display = 'none';
 }
 
-// fonction du choix de l'adversaire
 
+/**
+ * Fonction du choix de l'adversaire au click sur le bouton correspondant + affichage des combattants selectionnés seulement
+ * 
+ * @param {*} caracChoice = nombre qui sera renseigné selon le bouton cliqué
+ */
 function choixOpponent(caracChoice) {
 
         adv = parseInt(caracChoice);
@@ -206,4 +222,11 @@ function choixOpponent(caracChoice) {
         document.getElementById('opponents').style.display = 'none';
         document.getElementById('combat').style.display = 'block';
     }
+    for (let i = 0; i < 4; i++){
+        document.querySelector(".fighter"+(i+1)).parentNode.style.display = 'none';
+    }
+    document.querySelector(".fighter"+(perso+1)).parentNode.style.display = 'initial';
+    document.querySelector(".fighter"+(perso+1)).innerHTML += "<p>Votre combattant</p>";
+    document.querySelector(".fighter"+(adv+1)).parentNode.style.display = 'initial';
+    document.querySelector(".fighter"+(adv+1)).innerHTML += "<p>Votre adversaire</p>";
 }
