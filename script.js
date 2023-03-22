@@ -46,7 +46,7 @@ function creation() {
         combattantActuel.innerHTML+=`<div><img src=${gladiators[imgNumber]}></div><table><thead>
             <tr><th colspan="2">${combattants[i].name}</th></tr>
         </thead><tr><td>Force</td><td>${combattants[i].force}</td></tr><tr><td>Intelligence</td><td>${combattants[i].intell}</td></tr><tr><td>Defense</td><td>${combattants[i].def}</td></tr><tr><td>Vitesse</td><td>${combattants[i].speed}</td></tr>`;
-        let deletedImg = gladiators.splice(imgNumber, 1);
+        gladiators.splice(imgNumber, 1);
         document.getElementById(bouton).value = combattant.name;
         boutonOppo = "oppo" + (i + 1);
         document.getElementById(boutonOppo).value = combattant.name;
