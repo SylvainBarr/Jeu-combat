@@ -38,7 +38,29 @@
             </div>
         </div>
         <div id="combat" style="display: none;">
-            <input onclick="fight()" type="button" value="Combattre">
+            <input type="button" value="Combattre" class="combattre">
+            <div class="show-later" style="display: none;">
+                <div class="choix-combat ">
+                    <div>
+                        <label for="attack">Attaque</label>
+                        <input type="radio" name="radio-combat" id="attack" value="1">
+                    </div>
+                    <div>
+                        <label for="magic-attack">Attaque magique</label>
+                        <input type="radio" name="radio-combat" id="magic-attack" value="2">
+                    </div>
+                    <div>
+                        <label for="defense">Défense</label>
+                        <input type="radio" name="radio-combat" id="defense" value="3">
+                    </div>
+                </div>
+                <button type="button" class="choice-validation">Valider votre choix</button>
+            </div>
+            <div class="scores">
+                <div class="affichage-score1"></div>
+                <div class="affichage-message"></div>
+                <div class="affichage-score2"></div>
+            </div>
         </div>
     </main>
     

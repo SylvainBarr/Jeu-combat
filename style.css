@@ -1,19 +1,35 @@
 body{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
     background-color: rgb(42, 42, 42);
-    color: rgb(230, 230, 230);
+    color: rgb(0, 0, 0);
     background-image: url('img/background-arena.jpg');
     background-repeat: no-repeat;
-    background-position: center -500px;
+    background-position: center bottom;
     background-size: cover;
+    height: 95vh;
+    font-family: sans-serif;
+}
+
+h1{
+    font-variant: small-caps;
+    text-shadow: 2px 2px 10px white;
+}
+
+h2{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 3px solid white;
+    color: white;
+    background-color: rgba(62, 62, 62, 0.674);
+    border-radius: 5px;
 }
 
 input[type="button"]{
     padding:  10px 20px;
     background-color: rgb(233, 195, 150);
     border-radius: 5px;
-    border: 2px solid black;
+    border: 3px solid black;
     font-weight: 600;
 }
 input[type="button"]:hover{
@@ -40,11 +56,15 @@ main{
     justify-content: space-evenly;
 }
 
+#affichage>div{
+    border: 3px solid black;
+}
+
 #affichage div{
     width: 20%;
-    background-color: rgb(213, 213, 213);
+    background-color: rgb(235, 205, 156);
     color: black;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
 #affichage div p div{
@@ -53,6 +73,7 @@ main{
 
 #affichage div p div img{
     width: 50%;
+    border-radius: 15px;
 }
 
 table{
@@ -82,4 +103,47 @@ tbody tr td:last-child{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.choix-combat{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgb(249, 202, 144);
+    width: 60%;
+    margin: 10px auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.choice-validation{
+    padding:  10px 20px;
+    background-color: rgb(233, 195, 150);
+    border-radius: 5px;
+    border: 3px solid black;
+    font-weight: 600; cursor: pointer;
+}
+
+.choice-validation:hover{
+    background-color: rgb(250, 210, 162);
+    transform:scale(1.1) ;
+}
+.scores{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.affichage-score1, .affichage-score2{
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.affichage-message{
+    background-color: rgb(141, 16, 16);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
 }
